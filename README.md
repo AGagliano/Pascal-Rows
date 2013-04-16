@@ -6,23 +6,39 @@ Calculates a requested row of Pascal's Triangle.
 ===========
 
 Code Description:
-The code asks the user to input which row of Pascal's Triangle they would like to view.
-Note that the top row is row number 1.
+The code calculates and prints any desired row of Pascal's Triangle.
 
-Once given a row is given, the a vector "line" is created which will store the desired line of Pascal's triangle.
+Once given a row to calculate, the a vector "line" is created which will store the desired line of Pascal's triangle.
 A while loop is used to add values in order to this "line" list by using an (n choose k) equation based on the 
 row and index number.
 
 At the end, the row the user wanted is printed out.
 
+Type errors are raised when the row inputed is not positive, or is not an integer. 
+
+Examples are provided below.
+
 ===========
 
 Examples
 
-Example for a single row:
+Example output for row #3:
 
-Example for a row = 3.3
+  Row #3 in Pascal's triangle is [1, 2, 1].
 
-Example for user input as a word?
+Example output for row #9:
 
-Example for user input as a negative number?
+  Row #9 in Pascal's triangle is [1, 8, 28, 56, 70, 56, 28, 8, 1].
+
+Example output for row #5.2:
+
+  TypeError: Row must be an integer.
+
+Example output for row #-6:
+
+  TypeError: Row must be a positive integer.
+  
+============
+  
+
+
