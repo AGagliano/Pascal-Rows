@@ -20,8 +20,6 @@ Examples are provided below.
 
 ===========
 
-Examples
-
 Example output for row #3:
 
   Row #3 in Pascal's triangle is [1, 2, 1].
