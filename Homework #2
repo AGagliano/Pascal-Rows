@@ -1,3 +1,8 @@
+#Andrea Gagliano
+#Math 480 - Spring 2013
+#Homework 2
+
+
 """This code calculates and prints out any given row of Pascal's Triangle."""
 
 from math import factorial                                 #import the factorial function from the math class
