@@ -21,19 +21,15 @@ Examples are provided below.
 ===========
 
 Example output for row #3:
-
   Row #3 in Pascal's triangle is [1, 2, 1].
 
 Example output for row #9:
-
   Row #9 in Pascal's triangle is [1, 8, 28, 56, 70, 56, 28, 8, 1].
 
 Example output for row #5.2:
-
   TypeError: Row must be an integer.
 
 Example output for row #-6:
-
   TypeError: Row must be a positive integer.
   
 ============
