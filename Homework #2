@@ -23,7 +23,7 @@ line = []                                                  #sets up a list to bu
 #calculate the values in the line
 k = 0
 while k <= n:
-    value = factorial(n)/(factorial(k)*factorial(n-k))     #the value is determined by n choose k
+    value = binomial(n, k)     #the value is determined by n choose k
     line.append(value)                                     #append the next value onto line
     k = k + 1
 
