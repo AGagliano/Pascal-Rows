@@ -1,2 +1,20 @@
 # The following code is using Cython to increase the speed at which Pascal-Rows runs.
 
+cython("""
+    
+    from math import factorial
+    
+    def pascal_row(int row):                                                #function used to call the desired row of Pascal's triangle
+        cdef int n = row - 1
+        line = []
+        k = 0
+        while k <= n:
+            value = factorial(n)/(factorial(k)*factorial(n-k))              #calculate n choose k
+            line.append(value)                                              #include the value in the desired line
+            k = k + 1
+        print "Row #" + str(row) + " in Pascal's triangle is " + str(line) + "."    #print the requested line
+
+    pascal_row(3)
+    
+    """)
+
