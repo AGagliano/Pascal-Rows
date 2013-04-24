@@ -1,0 +1,58 @@
+
+#The following gives the timing differences between the updated cython code and the older python code.
+
+#previous python code:
+
+    row = 3                                                    #input which row of Pascal's you would like to view. 
+                                                               #Row 1 is top row.
+    #Ensures that row is a positive integer.
+    if not isinstance(row, (int, long, Integer)):              
+        raise TypeError("Row must be an integer.")
+    elif row <= 0:
+        raise TypeError("Row must be a positive integer.")
+    
+    #define variables
+    n = row - 1                                                #indexes the row the user gave, start with First row = 0
+    line = []                                                  #sets up a list to build the line in Pascal's triangle
+    
+    #calculate the values in the line
+    k = 0
+    while k <= n:
+        value = binomial(n, k)                                #the value is determined by n choose k
+        line.append(value)                                     #append the next value onto line
+        k = k + 1
+    
+    print "Row #" + str(row) + " in Pascal's triangle is " + str(line) + "." #prints the requested line
+
+#walltime:
+    1366772988.767943
+
+
+#current cython code:
+    
+    cython("""
+    
+    from math import factorial
+    
+    def pascal_row(int row):
+        cdef int n = row - 1
+        line = []
+        k = 0
+        while k <= n:
+            value = factorial(n)/(factorial(k)*factorial(n-k))
+            line.append(value)
+            k = k + 1
+        print "Row #" + str(row) + " in Pascal's triangle is " + str(line) + "."
+
+    pascal_row(3)
+    
+    """)
+
+#walltime:
+    1.5971078872680664
+
+This is significantly faster than the python code.
+
+
+
+
